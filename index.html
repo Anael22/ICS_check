@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>בדיקת זכאות למלגה</title>
+  <style>
+    body { font-family: Arial; direction: rtl; text-align: center; margin-top: 50px; }
+    input { margin: 10px; padding: 8px; width: 200px; }
+    button { padding: 10px 20px; }
+    #result { margin-top: 20px; font-weight: bold; color: red; }
+  </style>
+</head>
+<body>
+  <h2>בדיקת זכאות למלגת הייטק</h2>
+
+  <form id="eligibilityForm">
+    <input type="email" id="email" placeholder="הכנס מייל" required><br>
+    <input type="number" id="age" placeholder="הכנס גיל" required><br>
+    <button type="submit">בדוק זכאות</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('eligibilityForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const age = parseInt(document.getElementById('age').value);
+      let result = '';
+      result = 'אינך זכאי למלגה.';
+      document.getElementById('result').textContent = result;
+    });
+  </script>
+</body>
+</html>
